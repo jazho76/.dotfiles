@@ -26,7 +26,8 @@ return {
           'vimdoc',
           'vim',
           'bash',
-          'graphql'
+          'graphql',
+          'asm'
         },
 
         auto_install = false,

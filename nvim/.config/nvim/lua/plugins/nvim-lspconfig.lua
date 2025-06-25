@@ -105,6 +105,7 @@ return {
       pyright = {},
       angularls = {},
       cssls = {},
+      asm_lsp = {},
       ['eslint@4.8.0'] = {},
     }
 

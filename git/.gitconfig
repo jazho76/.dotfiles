@@ -11,3 +11,9 @@
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     nb = "!f() { git checkout -b \"$1\" && git push -u origin \"$1\"; }; f"
     dmlb = "!git branch | grep 'joaquin' | xargs git branch -d"
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
