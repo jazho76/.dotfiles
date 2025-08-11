@@ -127,3 +127,15 @@ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 ```
 
 Open Tmux and press Ctr+A I to install all plugins.
+
+## Install GDB Config
+
+```bash
+stow gdb
+```
+
+## Install Pwntools Config
+
+```bash
+stow pwntools
+```
