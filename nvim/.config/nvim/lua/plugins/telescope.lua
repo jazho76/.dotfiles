@@ -102,5 +102,6 @@ return {
     vim.keymap.set('n', '<leader>gc', require('telescope.builtin').git_commits, { desc = 'Search [G]it [C]ommits' })
     vim.keymap.set('n', '<leader>gb', require('telescope.builtin').git_branches, { desc = 'Search [G]it [B]ranches' })
     vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = 'Search [G]it [S]tatus' })
+    vim.keymap.set('n', '<leader>gh', require('telescope.builtin').git_bcommits, { desc = 'Search [G]it Commits [H]istory' })
   end
 }
