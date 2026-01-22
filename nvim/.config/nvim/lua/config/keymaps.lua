@@ -6,12 +6,13 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Buffer
-vim.keymap.set('n', '<A-d>', ':bprevious<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<A-a>', ':bnext<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<A-a>', ':bprevious<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<A-d>', ':bnext<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<A-q>', ':bdelete<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<A-Q>', ':bdelete!<CR>', { silent = true })
 vim.keymap.set('n', '<A-o>', ':%bd|e#|bd#<CR>', { noremap = true, silent = true })
 
--- Splits
+-- Split resizing
 vim.keymap.set('n', '<C-Up>', ':resize +2<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-Down>', ':resize -2<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', { noremap = true, silent = true })
