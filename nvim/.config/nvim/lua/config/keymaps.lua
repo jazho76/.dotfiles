@@ -39,3 +39,13 @@ vim.keymap.set('n', ']q', ':cnext<CR>', { desc = 'Go to next quick fix' })
 
 -- Keep yank when pasting over a selection
 vim.keymap.set('x', 'p', '"_dP', { silent = true })
+
+-- Move selected lines up and down
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { silent = true })
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { silent = true })
+vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { silent = true })
+
+-- Quick save
+vim.keymap.set('n', '<C-s>', ':w<CR>', { silent = true })
+vim.keymap.set('i', '<C-s>', '<Esc>:w<CR>', { silent = true })
