@@ -6,8 +6,8 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Buffer
-vim.keymap.set('n', '<A-a>', ':bprevious<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<A-d>', ':bnext<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<A-d>', ':bprevious<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<A-a>', ':bnext<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<A-q>', ':bdelete<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<A-o>', ':%bd|e#|bd#<CR>', { noremap = true, silent = true })
 
@@ -35,3 +35,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Quick fix
 vim.keymap.set('n', '[q', ':cprevious<CR>', { desc = 'Go to previous quick fix' })
 vim.keymap.set('n', ']q', ':cnext<CR>', { desc = 'Go to next quick fix' })
+
+-- Keep yank when pasting over a selection
+vim.keymap.set('x', 'p', '"_dP', { silent = true })
