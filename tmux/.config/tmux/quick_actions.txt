@@ -1,4 +1,4 @@
 npm run start|s|npm run start
 npm run build|b|npm run build
 npm install|i|npm install
-
+ced browse|c|ced browse
