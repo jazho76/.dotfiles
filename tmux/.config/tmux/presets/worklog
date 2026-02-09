@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WORKDIR=~/.decision_framework
+WORKDIR=~/.worklog
 
 mkdir -p "$WORKDIR"
 
@@ -18,3 +18,5 @@ tmux send-keys -t "Worklog.1" 'nvim day.md' C-m
 tmux send-keys -t "Worklog.2" "nvim open_threads.md" C-m
 tmux send-keys -t "Worklog.3" "nvim risks.md" C-m
 tmux send-keys -t "Worklog.4" "nvim week.md" C-m
+
+tmux select-pane -t "Worklog.1" 
