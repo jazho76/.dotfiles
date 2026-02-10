@@ -9,11 +9,11 @@ tmux kill-window -a
 tmux rename-window bootstrap
 
 # --- Window 1 ---
-tmux new-window -n LoginSPA -c ~/Documents/Projects/Forge/forge-frontend/
+tmux new-window -n LoginSPA -c ~/Documents/Projects/Forge/forge-frontend/spa/
 tmux send-keys -t LoginSPA 'nvim .' C-m 
 
 # --- Window 2 ---
-tmux new-window -n CoreSPA -c ~/Documents/Projects/Forge/forge-gamehq-frontend/
+tmux new-window -n CoreSPA -c ~/Documents/Projects/Forge/forge-gamehq-frontend/spa/
 tmux send-keys -t CoreSPA 'nvim .' C-m 
 
 # --- Window 3 ---
