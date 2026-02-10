@@ -25,7 +25,7 @@ tmux new-window -n StateLib -c ~/Documents/Projects/Forge/gamehq-internal-libs/s
 tmux send-keys -t StateLib 'nvim .' C-m 
 
 # --- Window 5 ---
-tmux new-window -n ServicesLib -c ~/Documents/Projects/Forge/gamehq-internal-libs/state/
+tmux new-window -n ServicesLib -c ~/Documents/Projects/Forge/gamehq-internal-libs/services/
 tmux send-keys -t ServicesLib 'nvim .' C-m 
 
 # Select default window
