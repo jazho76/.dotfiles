@@ -10,6 +10,7 @@ tmux new-window -n Worklog -c "$WORKDIR"
 tmux split-window -h -t "Worklog.1" -c "$WORKDIR"
 tmux split-window -v -t "Worklog.1" -c "$WORKDIR"
 tmux split-window -v -t "Worklog.1" -c "$WORKDIR"
+tmux split-window -v -t "Worklog.4" -c "$WORKDIR"
 
 tmux resize-pane -t "Worklog.1" -y 40%
 tmux resize-pane -t "Worklog.3" -y 20%
@@ -18,5 +19,13 @@ tmux send-keys -t "Worklog.1" 'nvim day.md' C-m
 tmux send-keys -t "Worklog.2" "nvim open_threads.md" C-m
 tmux send-keys -t "Worklog.3" "nvim risks.md" C-m
 tmux send-keys -t "Worklog.4" "nvim week.md" C-m
+tmux send-keys -t "Worklog.5" 'nvim changelog.md' C-m 
+
+
+tmux send-keys -t "Worklog.1" ':set wrap' C-m 
+tmux send-keys -t "Worklog.2" ':set wrap' C-m 
+tmux send-keys -t "Worklog.3" ':set wrap' C-m 
+tmux send-keys -t "Worklog.4" ':set wrap' C-m 
+tmux send-keys -t "Worklog.5" ':set wrap' C-m 
 
 tmux select-pane -t "Worklog.1" 
