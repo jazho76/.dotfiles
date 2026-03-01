@@ -9,23 +9,23 @@ tmux kill-window -a
 tmux rename-window bootstrap
 
 # --- Window 1 ---
-tmux new-window -n LoginSPA -c ~/Documents/Projects/Forge/forge-frontend/spa/
+tmux new-window -n LoginSPA -c ~/Documents/Projects/Forge/hq/forge-frontend/spa/
 tmux send-keys -t LoginSPA 'nvim .' C-m 
 
 # --- Window 2 ---
-tmux new-window -n CoreSPA -c ~/Documents/Projects/Forge/forge-gamehq-frontend/spa/
+tmux new-window -n CoreSPA -c ~/Documents/Projects/Forge/hq/forge-gamehq-frontend/spa/
 tmux send-keys -t CoreSPA 'nvim .' C-m 
 
 # --- Window 3 ---
-tmux new-window -n UILib -c ~/Documents/Projects/Forge/gamehq-internal-libs/ui/
+tmux new-window -n UILib -c ~/Documents/Projects/Forge/hq/gamehq-internal-libs/ui/
 tmux send-keys -t UILib 'nvim .' C-m 
 
 # --- Window 4 ---
-tmux new-window -n StateLib -c ~/Documents/Projects/Forge/gamehq-internal-libs/state/
+tmux new-window -n StateLib -c ~/Documents/Projects/Forge/hq/gamehq-internal-libs/state/
 tmux send-keys -t StateLib 'nvim .' C-m 
 
 # --- Window 5 ---
-tmux new-window -n ServicesLib -c ~/Documents/Projects/Forge/gamehq-internal-libs/services/
+tmux new-window -n ServicesLib -c ~/Documents/Projects/Forge/hq/gamehq-internal-libs/services/
 tmux send-keys -t ServicesLib 'nvim .' C-m 
 
 # Select default window
