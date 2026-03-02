@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WORKDIR=~/.worklog
+WORKDIR=~/Documents/Projects/Forge/worklog/
 
 mkdir -p "$WORKDIR"
 
