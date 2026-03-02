@@ -1,31 +1,35 @@
 #!/usr/bin/env bash
 
+SESSION="Management"
 WORKDIR=~/Documents/Projects/Forge/worklog/
 
-mkdir -p "$WORKDIR"
+tmux rename "$SESSION"
 
-tmux kill-window -t Worklog
-tmux new-window -n Worklog -c "$WORKDIR"
+# Clean exsting windows
+tmux kill-window -a
+tmux rename-window bootstrap
 
-tmux split-window -h -t "Worklog.1" -c "$WORKDIR"
-tmux split-window -v -t "Worklog.1" -c "$WORKDIR"
-tmux split-window -v -t "Worklog.1" -c "$WORKDIR"
-tmux split-window -v -t "Worklog.4" -c "$WORKDIR"
+tmux new-window -n Planning -c "$WORKDIR"
+tmux send-keys -t Planning 'claude' C-m 
 
-tmux resize-pane -t "Worklog.1" -y 40%
-tmux resize-pane -t "Worklog.3" -y 20%
+tmux new-window -n DayPriorities -c "$WORKDIR"
+tmux send-keys -t DayPriorities 'nvim ./day.md' C-m 
 
-tmux send-keys -t "Worklog.1" 'nvim day.md' C-m 
-tmux send-keys -t "Worklog.2" "nvim open_threads.md" C-m
-tmux send-keys -t "Worklog.3" "nvim risks.md" C-m
-tmux send-keys -t "Worklog.4" "nvim week.md" C-m
-tmux send-keys -t "Worklog.5" 'nvim changelog.md' C-m 
+tmux new-window -n WeekPriorities -c "$WORKDIR"
+tmux send-keys -t WeekPriorities 'nvim ./week.md' C-m 
 
+tmux new-window -n OpenThreads -c "$WORKDIR"
+tmux send-keys -t OpenThreads 'nvim ./open_threads.md' C-m 
 
-tmux send-keys -t "Worklog.1" ':set wrap' C-m 
-tmux send-keys -t "Worklog.2" ':set wrap' C-m 
-tmux send-keys -t "Worklog.3" ':set wrap' C-m 
-tmux send-keys -t "Worklog.4" ':set wrap' C-m 
-tmux send-keys -t "Worklog.5" ':set wrap' C-m 
+tmux new-window -n Risks -c "$WORKDIR"
+tmux send-keys -t Risks 'nvim ./risks.md' C-m 
 
-tmux select-pane -t "Worklog.1" 
+tmux new-window -n Changelog -c "$WORKDIR"
+tmux send-keys -t Changelog 'nvim ./changelog.md' C-m 
+
+# Select default window
+tmux select-window -t Planning
+
+# Remove bootstrap window
+tmux kill-window -t bootstrap
+
