@@ -3,7 +3,7 @@ return {
   tag = '0.1.8',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    commit = '2d9b061',
+    commit = '74b06c6',
     {
       'nvim-telescope/telescope-fzf-native.nvim',
       commit = 'cf48d4d',

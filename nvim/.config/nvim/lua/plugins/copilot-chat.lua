@@ -4,7 +4,7 @@ return {
   dependencies = {
     {
       'nvim-lua/plenary.nvim',
-      commit = '2d9b061',
+      commit = '74b06c6',
     },
   },
   opts = {
