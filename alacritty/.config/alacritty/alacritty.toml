@@ -15,8 +15,8 @@ action = "ToggleFullscreen"
 key = "F11"
 
 [colors.primary]
-foreground = "#e6edf3"
-background = "#010409"
+background = '#111122'
+foreground = '#ffffff'
 
 [colors.cursor]
 text = "#010409"
