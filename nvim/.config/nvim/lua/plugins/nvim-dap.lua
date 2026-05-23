@@ -47,7 +47,7 @@ return {
       dap.adapters.go = function(callback, _)
         local port = 38697
         local handle
-        handle = vim.loop.spawn("dlv", {
+        handle = vim.uv.spawn("dlv", {
           args = { "dap", "-l", "127.0.0.1:" .. port },
           detached = true,
         }, function(code)
@@ -104,7 +104,6 @@ return {
   {
     -- JS debugger
     'microsoft/vscode-js-debug',
-    tag = 'v1.95.3',
     build = 'npm install --legacy-peer-deps --ignore-scripts && npx gulp vsDebugServerBundle && mv dist out'
   },
   {

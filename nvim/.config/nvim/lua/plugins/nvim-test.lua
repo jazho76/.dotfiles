@@ -1,7 +1,6 @@
 return {
   'klen/nvim-test',
-  tag = '1.4.1',
-  config = function()
+    config = function()
     require('nvim-test').setup({
       runners = {
         cs = "nvim-test.runners.dotnet",
