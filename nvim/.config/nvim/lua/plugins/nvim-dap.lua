@@ -1,7 +1,6 @@
 return {
   {
     'mfussenegger/nvim-dap',
-    commit = 'cc92b05',
     config = function()
       local dap = require('dap')
 
@@ -80,11 +79,9 @@ return {
   },
   {
     'rcarriga/nvim-dap-ui',
-    commit = 'ffa8983',
     dependencies = {
       {
         'nvim-neotest/nvim-nio',
-        commit = 'a428f30',
       },
     },
     config = function()
@@ -113,7 +110,6 @@ return {
   {
     -- JS adapters
     'mxsdev/nvim-dap-vscode-js',
-    commit = '03bd296',
     config = function()
       require('dap-vscode-js').setup({
         debugger_path = vim.fn.stdpath('data') .. '/lazy/vscode-js-debug',

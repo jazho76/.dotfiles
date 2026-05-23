@@ -19,7 +19,6 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   {
     'folke/lazy.nvim',
-    commit = '56ead98e05bb37a4ec28930a54d836d033cf00f2',
   },
   { import = 'plugins' },
 }, {

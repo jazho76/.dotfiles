@@ -1,6 +1,5 @@
 return {
   'rcarriga/nvim-notify',
-  commit = 'fbef5d3',
   config = function()
     vim.notify = require('notify')
 

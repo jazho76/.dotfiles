@@ -7,22 +7,18 @@ return {
     -- Automatically install LSPs to stdpath for neovim
     {
       'williamboman/mason.nvim',
-      commit = 'e2f7f90',
     },
     {
       'williamboman/mason-lspconfig.nvim',
-      commit = '43894ad',
     },
     -- Automatically install formatters and other tools
     {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-      commit = 'c5e07b8',
     },
 
     -- Useful status updates for LSP
     {
       'j-hui/fidget.nvim',
-      commit = 'e2a175c',
       opts = {
         notification = {
           window = {
@@ -35,7 +31,6 @@ return {
     -- Provides additional settings and completions for Neovim's Lua API
     {
       'folke/neodev.nvim',
-      commit = '46aa467',
     }
   },
   config = function()

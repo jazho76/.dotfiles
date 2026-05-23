@@ -4,11 +4,9 @@ return {
   dependencies = {
     {
       'nvim-lua/plenary.nvim',
-      commit = '74b06c6',
     },
     {
       'nvim-telescope/telescope-fzf-native.nvim',
-      commit = 'cf48d4d',
       build = 'make',
       cond = function()
         return vim.fn.executable 'make' == 1
