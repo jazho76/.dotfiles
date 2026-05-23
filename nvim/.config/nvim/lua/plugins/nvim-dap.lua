@@ -106,7 +106,7 @@ return {
     -- JS debugger
     'microsoft/vscode-js-debug',
     tag = 'v1.95.3',
-    build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out'
+    build = 'npm install --legacy-peer-deps --ignore-scripts && npx gulp vsDebugServerBundle && mv dist out'
   },
   {
     -- JS adapters
