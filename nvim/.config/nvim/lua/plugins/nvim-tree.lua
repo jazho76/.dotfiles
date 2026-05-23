@@ -3,8 +3,10 @@ return {
   commit = 'ca7c4c3',
   lazy = false,
   dependencies = {
-    'nvim-tree/nvim-web-devicons',
-    commit = 'f09be61'
+    {
+      'nvim-tree/nvim-web-devicons',
+      commit = 'f09be61'
+    }
   },
   config = function()
     require('nvim-tree').setup {
