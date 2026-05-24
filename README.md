@@ -85,6 +85,13 @@ stow nvim
 sudo apt install ripgrep
 ```
 
+**Install tree-sitter CLI for nvim-treesitter parser builds**
+
+```bash
+cargo install cargo-binstall
+cargo binstall tree-sitter-cli
+```
+
 **Install wl-clipboard for Wayland clipboard synchronization.**
 
 ```bash
