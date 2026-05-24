@@ -47,10 +47,15 @@ return {
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
   },
-  build = ':TSUpdate',
+  build = function()
+    require('nvim-treesitter').install(parsers):wait(300000)
+  end,
   config = function()
     require('nvim-treesitter').setup()
-    require('nvim-treesitter').install(parsers)
+
+    if #vim.api.nvim_list_uis() > 0 then
+      require('nvim-treesitter').install(parsers)
+    end
 
     vim.api.nvim_create_autocmd('FileType', {
       group = vim.api.nvim_create_augroup('TreesitterFeatures', { clear = true }),

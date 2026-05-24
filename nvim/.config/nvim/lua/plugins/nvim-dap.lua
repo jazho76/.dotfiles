@@ -15,7 +15,20 @@ return {
       end, { desc = '[D]ebug Toggle [B]reakpoint With Condition' })
 
       -- NodeJS
-      local js_based_languages = { 'typescript', 'javascript', 'typescriptreact' }
+      local js_debug_path = vim.fn.stdpath('data') .. '/lazy/vscode-js-debug/src/dapDebugServer.js'
+      for _, adapter in ipairs({ 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal' }) do
+        dap.adapters[adapter] = {
+          type = 'server',
+          host = 'localhost',
+          port = '${port}',
+          executable = {
+            command = 'node',
+            args = { js_debug_path, '${port}' },
+          },
+        }
+      end
+
+      local js_based_languages = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact' }
       for _, language in ipairs(js_based_languages) do
         dap.configurations[language] = {
           {
@@ -29,17 +42,17 @@ return {
             type = 'pwa-node',
             request = 'attach',
             name = 'Attach',
-            processId = require 'dap.utils'.pick_process,
+            processId = require('dap.utils').pick_process,
             cwd = '${workspaceFolder}',
           },
           {
             type = 'pwa-chrome',
             request = 'launch',
-            name = 'Start Chrome with "localhost"',
+            name = 'Start Chrome with localhost',
             url = 'http://localhost:3000',
             webRoot = '${workspaceFolder}',
-            userDataDir = '${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir'
-          }
+            userDataDir = '${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir',
+          },
         }
       end
 
@@ -104,25 +117,10 @@ return {
   {
     -- JS debugger
     'microsoft/vscode-js-debug',
-    build = 'npm install --legacy-peer-deps --ignore-scripts && npx gulp vsDebugServerBundle && mv dist out'
-  },
-  {
-    -- JS adapters
-    'mxsdev/nvim-dap-vscode-js',
-    config = function()
-      require('dap-vscode-js').setup({
-        debugger_path = vim.fn.stdpath('data') .. '/lazy/vscode-js-debug',
-        adapters = {
-          'chrome',
-          'pwa-node',
-          'pwa-chrome',
-          'pwa-msedge',
-          'node-terminal',
-          'pwa-extensionHost',
-          'node',
-          'chrome'
-        },
-      })
-    end
+    build = table.concat({
+      'curl -fL https://github.com/microsoft/vscode-js-debug/releases/download/v1.117.0/js-debug-dap-v1.117.0.tar.gz -o js-debug-dap.tar.gz',
+      'tar xzf js-debug-dap.tar.gz --strip-components=1',
+      'rm js-debug-dap.tar.gz',
+    }, ' && '),
   },
 }
