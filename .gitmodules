@@ -1,3 +1,0 @@
-[submodule "forge"]
-	path = forge
-	url = git@github.com:jpinilloslr/.dotfiles-forge.git
