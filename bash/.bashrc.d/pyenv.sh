@@ -5,7 +5,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 
 PATH="$(bash --norc -ec 'IFS=:; paths=($PATH);
 for i in ${!paths[@]}; do
-if [[ ${paths[i]} == "''/home/joaquin/.pyenv/shims''" ]]; then unset '\''paths[i]'\'';
+if [[ ${paths[i]} == "''${HOME}/.pyenv/shims''" ]]; then unset '\''paths[i]'\'';
 fi; done;
 echo "${paths[*]}"')"
 export PATH="${HOME}/.pyenv/shims:${PATH}"
