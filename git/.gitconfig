@@ -5,6 +5,8 @@
     editor = nvim
 [pull]
     ff = only
+[status]
+    showUntrackedFiles = all
 [color]
     ui = auto
 [alias]
